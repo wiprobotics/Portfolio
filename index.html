@@ -1,9 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Site</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>James | Robotics Portfolio</title>
+  <style>
+    :root {
+      --primary: #1f2937;
+      --accent: #00d1b2;
+      --bg: #f9fafb;
+      --text: #111827;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: var(--primary);
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, GitHub Pages!</h1>
+  <header>
+    <h1>James' Robotics Portfolio</h1>
+    <p>Engineering intelligent systems with creativity, precision, and code.</p>
+  </header>
+
+  <section>
+    <h2>Featured Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>PEA: Personal Assistive Robot</h3>
+        <p>An interactive humanoid designed for elderly care, with facial recognition and obstacle avoidance. Built using Arduino, Raspberry Pi, and Python.</p>
+      </div>
+      <div class="card">
+        <h3>Autonomous Daffodil Picker</h3>
+        <p>Field-tested agricultural robot capable of flower detection, cutting, and sorting using YOLO vision AI and ROS integration.</p>
+      </div>
+      <div class="card">
+        <h3>Robotic Arm Controller</h3>
+        <p>Custom PCB and PID control system for a 5-DOF arm using inverse kinematics. Includes real-time visualization and feedback.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>About Me</h2>
+    <p>I'm James, a robotics engineer and educator with a BSc in Robotics. I build intelligent machines, design embedded systems, and teach the next generation of engineers. When I'm not building robots, I'm probably diving or playing D&D.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:james@example.com">wiprobotics@gmail.com</a><br>
+    GitHub: <a href="https://github.com/wiprobotics">wiprobotics</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 James | Robotics Portfolio
+  </footer>
 </body>
 </html>
