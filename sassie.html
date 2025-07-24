@@ -1,49 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SASSIE</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SASSIE: Water Sampling Drone</title>
+  <style>
+    :root {
+      --primary: #243040;
+      --accent: #00d1b2;
+      --bg: #f9fafb;
+      --text: #111827;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 100%;
+      height: 315px;
+      border: none;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .pdf-viewer {
+      margin-top: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: var(--primary);
+      color: white;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
-  <h1>Intro</h1>
+  <header>
+    <h1>SASSIE: Water Sampling Drone</h1>
+    <p>A semi-submersible system for automated environmental sampling</p>
+  </header>
 
-  The <b>S</b>emi-submersible <b>A</b>rray and <b>S</b>ampler for <b>S</b>ewage <b>I</b>mpact on <b>E</b>cosystems (<b>SASSIE</b>) drone was a third year project in university. It was developed by the <b>SASDEV</b> team consisting of myself and another fellow robotics student with the aide of 3 computing students.
+  <section>
+    <h2>About the Project</h2>
+    <p>
+      The <strong>Semi-submersible Array and Sampler for Sewage Impact on Ecosystems</strong> (<strong>SASSIE</strong>) was developed as a final-year university project. Designed by the SASDEV team—composed of two robotics engineers (myself included) and supported by three computing students—SASSIE addresses the need for safer, automated water sampling in coastal areas affected by sewage discharge.
+    </p>
+    <p>
+      The prototype successfully demonstrated the core sampling cycle in shallow water. While future iterations aimed to enable full submersion and more advanced autonomy, this MVP (Minimum Viable Product) laid the foundation for safer, remote environmental monitoring—removing the need for manual collection by volunteers.
+    </p>
+  </section>
 
-  The aim of the project was to develop a system which could be deployed into shallow waters and collect samples to analyse the impact sewage is having on marine life. This would also mean that volunteers wouldn't have to manually grab samples from the ocean.
+  <section>
+    <h2>Videos</h2>
+    <div class="video-container">
+      <div>
+        <h3>SASSIE Trailer</h3>
+        <iframe src="https://www.youtube.com/embed/XgI4SX-onJ4" title="SASSIE Trailer" allowfullscreen></iframe>
+      </div>
+      <div>
+        <h3>Sampling System Overview</h3>
+        <iframe src="https://www.youtube.com/embed/GcKizj6Iq2o" title="Sampling System" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
 
-  Only a prototype was built with the full version having many more planned features such as the ability to fully submerge. However the prototype was an appropriate MVP as it could do the full sampling cycle.
+  <section>
+    <h2>Photo Gallery</h2>
+    <div class="gallery">
+      <img src="/assets/images/sassiegallery/img1.jpg" alt="SASSIE on water">
+      <img src="/assets/images/sassiegallery/img2.jpg" alt="Underside detail">
+      <img src="/assets/images/sassiegallery/img3.jpg" alt="Electronics housing">
+      <img src="/assets/images/sassiegallery/img4.jpg" alt="Team testing session">
+      <img src="/assets/images/sassiegallery/img5.jpg" alt="Team testing session">
+      <img src="/assets/images/sassiegallery/img6.jpg" alt="Team testing session">
+    </div>
+  </section>
 
-  <h1>Videos</h1>
+  <section class="pdf-viewer">
+    <h2>Regulations Document</h2>
+    <p>
+      As no clear guidelines existed for unmanned aquatic drones in UK coastal waters, we drafted a set of safety and operational regulations to guide deployment.
+    </p>
+    <iframe src="/resources/Regs.pdf" width="100%" height="600px">
+      This browser does not support embedded PDFs. 
+      <a href="/resources/Regs.pdf">Click here to download the PDF.</a>
+    </iframe>
+  </section>
 
-  <h2>Sassie Trailer</h2>
-
-  <iframe width="560" height="315" 
-          src="https://www.youtube.com/embed/XgI4SX-onJ4" 
-          title="YouTube video player" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-  </iframe>
-
-  <h2>Sampling System</h2>
-
-  <iframe width="560" height="315" 
-          src="https://www.youtube.com/embed/GcKizj6Iq2o" 
-          title="YouTube video player" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-  </iframe>
-
-  <h1>Regulations</h1>
-
-  We developed regulations for our unmanned aquatic drone as we couldn't find prexisting regulations.
-
-  <iframe src="resources\Regs.pdf" width="100%" height="600px">
-  This browser does not support PDFs. Please download the PDF to view it: 
-  <a href="resources\Regs.pdf">Download PDF</a>
-  </iframe>
+  <footer>
+    &copy; 2025 James | WIPRobotics
+  </footer>
 
 </body>
 </html>
