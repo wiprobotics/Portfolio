@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PEA: Personal Electronic Assistant</title>
+  <style>
+    :root {
+      --primary: #243040;
+      --accent: #00d1b2;
+      --bg: #f9fafb;
+      --text: #111827;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1.5rem 2rem;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .header-text {
+      flex-grow: 1;
+    }
+
+    .header-text h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: white;
+    }
+
+    .header-text p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: white;
+    }
+
+    h2, h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 100%;
+      height: 315px;
+      border: none;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .pdf-viewer {
+      margin-top: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: var(--primary);
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <a href="index.html">
+        <img src="images/logo.png" alt="WIP Robotics Logo" class="logo" />
+      </a>
+      <div class="header-text">
+        <h1>PEA: Personal Electronic Assistant</h1>
+        <p>A humanoid robot designed for simple service applications</p>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2>About the Project</h2>
+    <p>
+      The <strong>Semi-submersible Array and Sampler for Sewage Impact on Ecosystems</strong> (<strong>SASSIE</strong>) was developed as a final-year university project. Designed by the SASDEV team—composed of two robotics engineers (myself included) and supported by three computing students—SASSIE addresses the need for safer, automated water sampling in coastal areas affected by sewage discharge.
+    </p>
+    <p>
+      The prototype successfully demonstrated the core sampling cycle in shallow water. While future iterations aimed to enable full submersion and more advanced autonomy, this MVP (Minimum Viable Product) laid the foundation for safer, remote environmental monitoring—removing the need for manual collection by volunteers.
+    </p>
+  </section>
+
+  <section>
+    <h2>Videos</h2>
+    <div class="video-container">
+      <div>
+        <h3>An example of PEA's face movement</h3>
+        <iframe src="https://www.youtube.com/embed/X69GIrtGQjQ" title="PEA face movement" allowfullscreen></iframe>
+      </div>
+      <div>
+        <h3>A one on one testing chat with PEA</h3>
+        <iframe src="https://www.youtube.com/embed/7R_WeRtWwC0" title="Late night PEA chat in the lab" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Photo Gallery</h2>
+    <div class="gallery">
+      <img src="images/sassiegallery/img1.png" alt="SASSIE on water">
+      <img src="images/sassiegallery/img2.jpg" alt="Underside detail">
+      <img src="images/sassiegallery/img3.jpg" alt="Electronics housing">
+      <img src="images/sassiegallery/img4.jpg" alt="Team testing session">
+      <img src="images/sassiegallery/img5.jpg" alt="Team testing session">
+      <img src="images/sassiegallery/img6.jpg" alt="Team testing session">
+      <img src="images/sassiegallery/img7.jpg" alt="Team testing session">
+    </div>
+  </section>
+
+  <section class="pdf-viewer">
+    <h2>Dissertation</h2>
+    <p>
+      This project was completed as part of my final year university dissertation. The full dissertation document is available below for those interested in the technical details and development process of PEA.
+    </p>
+    <iframe src="resources/Dissertation.pdf" width="100%" height="600px">
+      This browser does not support embedded PDFs. 
+      <a href="resources/Dissertation.pdf">Click here to download the PDF.</a>
+    </iframe>
+  </section>
+
+  <footer>
+    &copy; 2025 James | WIPRobotics
+  </footer>
+
+</body>
+</html>
