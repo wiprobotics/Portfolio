@@ -93,14 +93,16 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 15px;
-      margin-top: 1rem;
     }
 
+    /* make every tile the same shape */
     .gallery img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      aspect-ratio: 4 / 3;   /* pick 1/1, 16/9, etc. */
+      object-fit: cover;     /* crop to fill the box */
       border-radius: 8px;
-      object-fit: cover;
+      display: block;        /* removes baseline gap */
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       transition: transform 0.2s ease;
     }
@@ -112,6 +114,57 @@
     .pdf-viewer {
       margin-top: 2rem;
     }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 8px;
+    }
+
+    .lightbox-caption {
+      color: white;
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+
+    .lightbox .close {
+      position: absolute;
+      top: 16px; right: 20px;
+      font-size: 2rem;
+      line-height: 1;
+      color: #fff;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 56px; height: 56px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.12);
+      border: 0;
+      border-radius: 50%;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .nav:hover { background: rgba(255,255,255,0.2); }
+    .nav.prev { left: 12px; }
+    .nav.next { right: 12px; }
 
     footer {
       text-align: center;
@@ -178,14 +231,43 @@
     <h2>Photo Gallery</h2>
     <div class="gallery">
       <img src="images/hi5/img1.jpg" alt="Hi5 Prototype">
-      <img src="images/hi5/img2.jpg" alt="Hi5 Internals">
-      <img src="images/hi5/img3.jpg" alt="Hi5 in display stand">
+      <img src="images/hi5/img2.jpg" alt="Hi5 in display stand">
+      <img src="images/hi5/img3.jpg" alt="Hi5 Internals">
+      <img src="images/hi5/img4.jpg" alt="Hi5 with elastic bands for finger return">
     </div>
+
+    <div id="lightbox" class="lightbox">
+      <button class="close" aria-label="Close">&times;</button>
+
+      <div class="lightbox-content">
+        <img class="lightbox-img" src="" alt="">
+        <p class="lightbox-caption"></p>
+      </div>
+
+      <button class="nav prev" aria-label="Previous">
+        <!-- left chevron -->
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+          <path d="M15 6 L9 12 L15 18" fill="none" stroke="white" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <button class="nav next" aria-label="Next">
+        <!-- right chevron -->
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+          <path d="M9 6 L15 12 L9 18" fill="none" stroke="white" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
   </section>
 
   <footer>
     &copy; 2025 James | WIPRobotics
   </footer>
+
+  <script src="js/lightbox.js"></script>
 
 </body>
 </html>
