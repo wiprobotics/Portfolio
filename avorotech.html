@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nebula Arduino Hat</title>
+  <title>SASSIE: Water Sampling Drone</title>
   <style>
     :root {
       --primary: #243040;
@@ -112,7 +112,7 @@
     }
 
     .pdf-viewer {
-      margin-top: 4rem;
+      margin-top: 2rem;
     }
 
     .lightbox {
@@ -164,7 +164,7 @@
 
     .nav:hover { background: rgba(255,255,255,0.2); }
     .nav.prev { left: 12px; }
-    .nav.next { right: 12px; }    
+    .nav.next { right: 12px; }
 
     footer {
       text-align: center;
@@ -191,8 +191,8 @@
         <img src="images/logo.png" alt="WIP Robotics Logo" class="logo" />
       </a>
       <div class="header-text">
-        <h1>Nebula Arduino Hat</h1>
-        <p>A servo breakout board for Arduino and compatible microcontrollers</p>
+        <h1>AvoroTech</h1>
+        <p>A daffodil farming robot startup</p>
       </div>
     </div>
   </header>
@@ -200,22 +200,39 @@
   <section>
     <h2>About the Project</h2>
     <p>
-      As a part of the <a href="hi5.html">HI5 project</a>, we needed a way to control multiple servos with precise timing. The Nebula Arduino Hat was designed to provide an easy-to-use solution for controlling up to 12 servos from an Arduino with dedicated power regulation and signal integrity.
+      AvoroTech was a startup focused on developing autonomous robots for daffodil farming. The project involved designing and prototyping robotic systems capable of monitoring and harvesting daffodils efficiently. The goal was to reduce labor costs and increase productivity in the agricultural sector.
+    </p>
+    <br />
+    <p>
+      I was one of the 4 co-founders of the startup, contributing to both the technical and business aspects of the venture. My responsibilities included overseeing the development of the robotic systems, managing project timelines, and coordinating with team members to ensure successful execution of our goals.
     </p>
     <p>
-      The board started as a 5 servo breakout just for the HI5 hand, but was later expanded to 12 servos to accommodate more complex projects. It features a dedicated 5V power supply input, ensuring that the servos receive stable power without overloading the Arduino's onboard regulator.
+      I also played a key role in the fundraising efforts, helping to write grant applications and pitch presentations to secure funding for the startup. This experience provided valuable insights into the challenges and opportunities of launching a tech startup in the agricultural sector.
+    </p>
+    <br />
+    <p>
+      My role in the project was mainly focused on the programming of the robot's navigation and AI sensor systems. This primarily involved developing what we called the "hunting algorithm" - a method for the robot to autonomously search for and identify ripe daffodils in a field using computer vision and sensor data.
     </p>
     <p>
-      The Nebula Hat is compatible with standard hobby servos and can be easily integrated into any Arduino project. It fits perfectly on top of an Arduino Uno or Mega, making it a compact and efficient solution for robotics and automation projects.
+      I also contributed to the mechanical assembly of the robot, building based on what the other team members designed. This included integrating motors, sensors, and other hardware components to ensure the robot could operate effectively in outdoor agricultural environments.
     </p>
+
   </section>
 
   <section>
     <h2>Videos</h2>
     <div class="video-container">
       <div>
-        <h3>Nebula Powering Several Devices</h3>
-        <iframe src="https://www.youtube-nocookie.com/embed/-HitIF9Cov8" title="Nebula Powering Several Devices" allowfullscreen></iframe>
+        <h3>Daffodil hunting AI test 1 footage</h3>
+        <iframe src="https://www.youtube-nocookie.com/embed/3_Jpsb_vbRk" title="Daffodil hunting AI test 1 footage" allowfullscreen></iframe>
+      </div>
+      <div>
+        <h3>Daffodil hunting AI test 2 footage</h3>
+        <iframe src="https://www.youtube-nocookie.com/embed/BLnbJ40mMVU" title="Daffodil hunting AI test 2 footage" allowfullscreen></iframe>
+      </div>
+      <div>
+        <h3>Daffodil hunting AI L515 footage</h3>
+        <iframe src="https://www.youtube-nocookie.com/embed/ydwDoXLPGZ8" title="Daffodil hunting AI L515 footage" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -223,10 +240,12 @@
   <section>
     <h2>Photo Gallery</h2>
     <div class="gallery">
-      <img src="images/nebulagallery/img1.jpg" alt="Nebula Board Top View">
-      <img src="images/nebulagallery/img2.jpg" alt="Nebula Board vs Hi5 Board">
+      <img src="images/avorogallery/img1.jpg" alt="AvoroTech Logo">
+      <img src="images/avorogallery/img2.jpg" alt="Me and Another Co-founder programming the robot">
+      <img src="images/avorogallery/img3.jpg" alt="A cinematic shot of the robot">
+      <img src="images/avorogallery/img4.jpg" alt="Daffodils rotting in the field with rubbish">
     </div>
-  
+
     <div id="lightbox" class="lightbox">
       <button class="close" aria-label="Close">&times;</button>
 
@@ -236,33 +255,22 @@
       </div>
 
       <button class="nav prev" aria-label="Previous">
-        <!-- left chevron -->
-        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+        <!-- left arrow svg -->
+        <svg viewBox="0 0 24 24" width="28" height="28">
           <path d="M15 6 L9 12 L15 18" fill="none" stroke="white" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
 
       <button class="nav next" aria-label="Next">
-        <!-- right chevron -->
-        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+        <!-- right arrow svg -->
+        <svg viewBox="0 0 24 24" width="28" height="28">
           <path d="M9 6 L15 12 L9 18" fill="none" stroke="white" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
     </div>
 
-  </section>
-
-  <section class="pdf-viewer">
-    <h2>Datasheet</h2>
-    <p>
-      The full datasheet for the Nebula Arduino Hat is available below, providing detailed specifications, pinouts, and usage instructions.
-    </p>
-    <iframe src="resources/Nebula V2.0 Datasheet.pdf" width="100%" height="600px">
-      This browser does not support embedded PDFs. 
-      <a href="resources/Nebula V2.0 Datasheet.pdf">Click here to download the PDF.</a>
-    </iframe>
   </section>
 
   <footer>
