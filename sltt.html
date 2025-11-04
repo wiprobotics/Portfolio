@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AvoroTech</title>
+  <title>Sign Language Translator Tool (SLTT)</title>
   <style>
     :root {
       --primary: #243040;
@@ -191,8 +191,8 @@
         <img src="images/logo.png" alt="WIP Robotics Logo" class="logo" />
       </a>
       <div class="header-text">
-        <h1>AvoroTech</h1>
-        <p>A daffodil farming robot startup</p>
+        <h1>Sign Language Translator Tool (SLTT)</h1>
+        <p>A tool for translating the sign language alphabet into text and speech</p>
       </div>
     </div>
   </header>
@@ -200,39 +200,22 @@
   <section>
     <h2>About the Project</h2>
     <p>
-      AvoroTech was a startup focused on developing autonomous robots for daffodil farming. The project involved designing and prototyping robotic systems capable of monitoring and harvesting daffodils efficiently. The goal was to reduce labor costs and increase productivity in the agricultural sector.
-    </p>
-    <br />
-    <p>
-      I was one of the 4 co-founders of the startup, contributing to both the technical and business aspects of the venture. My responsibilities included overseeing the development of the robotic systems, managing project timelines, and coordinating with team members to ensure successful execution of our goals.
+      The Sign Language Translator Tool (SLTT) was a third year university project aimed at creating a device to assist communication for the hearing impaired. The SLTT uses a Mediapipe model and a custom trained Tensorflow model to recognize hand gestures corresponding to the letters of the sign language alphabet. The recognized letters are then converted into text and speech using a text-to-speech engine.
     </p>
     <p>
-      I also played a key role in the fundraising efforts, helping to write grant applications and pitch presentations to secure funding for the startup. This experience provided valuable insights into the challenges and opportunities of launching a tech startup in the agricultural sector.
-    </p>
-    <br />
-    <p>
-      My role in the project was mainly focused on the programming of the robot's navigation and AI sensor systems. This primarily involved developing what we called the "hunting algorithm" - a method for the robot to autonomously search for and identify ripe daffodils in a field using computer vision and sensor data.
+      The project was built using a Raspberry Pi 4, a camera module, and a touchscreen display. The device is portable and can be used in various settings to facilitate communication between sign language users and non-sign language users.
     </p>
     <p>
-      I also contributed to the mechanical assembly of the robot, building based on what the other team members designed. This included integrating motors, sensors, and other hardware components to ensure the robot could operate effectively in outdoor agricultural environments.
+      The SLTT was a solo project, with the hardware and software components designed and implemented by myself.
     </p>
-
   </section>
 
   <section>
     <h2>Videos</h2>
     <div class="video-container">
       <div>
-        <h3>Daffodil hunting AI test 1 footage</h3>
-        <iframe src="https://www.youtube-nocookie.com/embed/tAHKjQGpuEs" title="Daffodil hunting AI test 1 footage" allowfullscreen></iframe>
-      </div>
-      <div>
-        <h3>Daffodil hunting AI test 2 footage</h3>
-        <iframe src="https://www.youtube-nocookie.com/embed/Aj8t-T6DMWI" title="Daffodil hunting AI test 2 footage" allowfullscreen></iframe>
-      </div>
-      <div>
-        <h3>Daffodil hunting AI L515 footage</h3>
-        <iframe src="https://www.youtube-nocookie.com/embed/UpkYxEFxmY8" title="Daffodil hunting AI L515 footage" allowfullscreen></iframe>
+        <h3>Sign Language to Text Test</h3>
+        <iframe src="https://www.youtube-nocookie.com/embed/QP8MeqDcQLg" title="Sign Language to Text Test" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -240,10 +223,10 @@
   <section>
     <h2>Photo Gallery</h2>
     <div class="gallery">
-      <img src="images/avorogallery/img1.jpg" alt="AvoroTech Logo">
-      <img src="images/avorogallery/img2.jpg" alt="Me and Another Co-founder programming the robot">
-      <img src="images/avorogallery/img3.jpg" alt="A cinematic shot of the robot">
-      <img src="images/avorogallery/img4.jpg" alt="Daffodils rotting in the field with rubbish">
+      <img src="images/hi5/img1.jpg" alt="Hi5 Prototype">
+      <img src="images/hi5/img2.jpg" alt="Hi5 in display stand">
+      <img src="images/hi5/img3.jpg" alt="Hi5 Internals">
+      <img src="images/hi5/img4.jpg" alt="Hi5 with elastic bands for finger return">
     </div>
 
     <div id="lightbox" class="lightbox">
@@ -255,16 +238,16 @@
       </div>
 
       <button class="nav prev" aria-label="Previous">
-        <!-- left arrow svg -->
-        <svg viewBox="0 0 24 24" width="28" height="28">
+        <!-- left chevron -->
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
           <path d="M15 6 L9 12 L15 18" fill="none" stroke="white" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
 
       <button class="nav next" aria-label="Next">
-        <!-- right arrow svg -->
-        <svg viewBox="0 0 24 24" width="28" height="28">
+        <!-- right chevron -->
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
           <path d="M9 6 L15 12 L9 18" fill="none" stroke="white" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
