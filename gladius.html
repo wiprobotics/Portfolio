@@ -149,6 +149,14 @@
       cursor: pointer;
     }
 
+    .clickable-image {
+      width: 100%;
+      max-width: 2560px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      cursor: zoom-in;
+    }
+
     .nav {
       position: absolute;
       top: 50%;
@@ -215,8 +223,24 @@
     <p>
       Here is the Logisim circuit design for the gladius architecture:
     </p>
-    <img src="images/gladiuslogisim.png" alt="Logisim circuit design for the gladius architecture" style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+
+    <img 
+      src="images/gladiuslogisim.webp"
+      data-full="images/gladiuslogisim.webp"
+      alt="Logisim circuit design for the gladius architecture"
+      class="clickable-image"
+      loading="lazy"
+    >
   </section>
+
+  <!-- Lightbox -->
+  <div id="single-lightbox" class="lightbox">
+    <button class="close">&times;</button>
+
+    <div class="lightbox-content">
+      <img class="lightbox-img" src="" alt="">
+    </div>
+  </div>
 
   <section>
     <h2>Photo Gallery</h2>

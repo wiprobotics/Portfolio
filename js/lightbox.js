@@ -1,42 +1,95 @@
 // lightbox.js
 
-const images = document.querySelectorAll('.gallery img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.querySelector('.lightbox-img');
-const closeBtn = document.querySelector('.lightbox .close');
-const prevBtn = document.querySelector('.lightbox .prev');
-const nextBtn = document.querySelector('.lightbox .next');
-const caption = document.querySelector('.lightbox-caption');
+// ==========================
+// Gallery lightbox
+// ==========================
+const galleryImages = document.querySelectorAll('.gallery img');
+const galleryLightbox = document.getElementById('lightbox');
+const galleryLightboxImg = galleryLightbox.querySelector('.lightbox-img');
+const galleryCloseBtn = galleryLightbox.querySelector('.close');
+const prevBtn = galleryLightbox.querySelector('.prev');
+const nextBtn = galleryLightbox.querySelector('.next');
+const galleryCaption = galleryLightbox.querySelector('.lightbox-caption');
 
 let currentIndex = 0;
 
-function showImage(index) {
+function showGalleryImage(index) {
   currentIndex = index;
-  lightboxImg.src = images[index].src;
-    caption.textContent = images[index].alt || '';
-  lightbox.style.display = 'flex';
+
+  const img = galleryImages[index];
+  const fullSrc = img.dataset.full || img.src;
+
+  galleryLightboxImg.src = fullSrc;
+  galleryLightboxImg.alt = img.alt || '';
+  galleryCaption.textContent = img.alt || '';
+  galleryLightbox.style.display = 'flex';
 }
 
-images.forEach((img, i) => {
-  img.addEventListener('click', () => showImage(i));
+galleryImages.forEach((img, i) => {
+  img.addEventListener('click', () => showGalleryImage(i));
 });
 
-closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
-prevBtn.addEventListener('click', () => {
-  showImage((currentIndex - 1 + images.length) % images.length);
-});
-nextBtn.addEventListener('click', () => {
-  showImage((currentIndex + 1) % images.length);
+galleryCloseBtn.addEventListener('click', () => {
+  galleryLightbox.style.display = 'none';
 });
 
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) lightbox.style.display = 'none';
+prevBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  showGalleryImage((currentIndex - 1 + galleryImages.length) % galleryImages.length);
 });
 
+nextBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  showGalleryImage((currentIndex + 1) % galleryImages.length);
+});
+
+galleryLightbox.addEventListener('click', (e) => {
+  if (e.target === galleryLightbox) {
+    galleryLightbox.style.display = 'none';
+  }
+});
+
+// ==========================
+// Single image lightbox
+// ==========================
+const singleImage = document.querySelector('.clickable-image');
+const singleLightbox = document.getElementById('single-lightbox');
+const singleLightboxImg = singleLightbox.querySelector('.lightbox-img');
+const singleCloseBtn = singleLightbox.querySelector('.close');
+
+if (singleImage) {
+  singleImage.addEventListener('click', () => {
+    const fullSrc = singleImage.dataset.full || singleImage.src;
+    singleLightboxImg.src = fullSrc;
+    singleLightboxImg.alt = singleImage.alt || '';
+    singleLightbox.style.display = 'flex';
+  });
+}
+
+singleCloseBtn.addEventListener('click', () => {
+  singleLightbox.style.display = 'none';
+});
+
+singleLightbox.addEventListener('click', (e) => {
+  if (e.target === singleLightbox) {
+    singleLightbox.style.display = 'none';
+  }
+});
+
+// ==========================
+// Keyboard controls
+// ==========================
 document.addEventListener('keydown', (e) => {
-  if (lightbox.style.display === 'flex') {
+  const galleryOpen = galleryLightbox.style.display === 'flex';
+  const singleOpen = singleLightbox.style.display === 'flex';
+
+  if (galleryOpen) {
     if (e.key === 'ArrowRight') nextBtn.click();
     if (e.key === 'ArrowLeft') prevBtn.click();
-    if (e.key === 'Escape') lightbox.style.display = 'none';
+    if (e.key === 'Escape') galleryLightbox.style.display = 'none';
+  }
+
+  if (singleOpen) {
+    if (e.key === 'Escape') singleLightbox.style.display = 'none';
   }
 });
